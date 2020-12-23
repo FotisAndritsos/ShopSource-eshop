@@ -1,5 +1,17 @@
+const menuBtn = document.querySelector('.menu');
+const closeBtn = document.querySelector('.close');
+const nav = document.querySelector('.nav');
 
-
+menuBtn.addEventListener('click',()=>{
+  nav.classList.toggle('active');
+  menuBtn.classList.add("active");
+  closeBtn.classList.add('active')
+})
+closeBtn.addEventListener("click", () => {
+  nav.classList.toggle("active");
+  menuBtn.classList.remove("active");
+  closeBtn.classList.remove("active");
+});
 var mySwiper = new Swiper(".swiper-container", {
   slidesPerView: 1,
   loop: true,
