@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ShopSource-eshop</title>
+
+    <!--Font awesome CDN-->
+    <script
+      src="https://kit.fontawesome.com/996b325733.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header  -->
+    <header>
+      <!-- Top Header  -->
+
+      <div class="top-header">
+        <div class="top-container">
+          <div class="top-header-left">
+            <ion-icon name="call-outline"></ion-icon>
+            <p>2410 543567</p>
+            <ion-icon name="mail-open-outline"></ion-icon>
+            <p>sale@yoursite.com</p>
+          </div>
+          <div class="top-header-right">
+            <div class="social">
+              <a href=""><i class="fab fa-facebook-f"></i></a>
+              <a href=""><i class="fab fa-twitter"></i></a>
+              <a href=""><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="sign">
+              <ion-icon name="person-outline"></ion-icon>
+              <a href="">Sign in / Sign up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Middle Header  -->
+      <div class="middle-header">
+        <h1 class="logo"><a href="index.html">ShopSource.</a></h1>
+        <form action="/action_page.php">
+          <select name="categories" id="categories">
+            <option value="all-categories">All Categories</option>
+            <option value="home">Home</option>
+            <option value="fashion">Fashion</option>
+            <option value="women">Women</option>
+            <option value="men">Men</option>
+            <option value="new-arrivals">New Arrivals</option>
+          </select>
+          <input type="text" id="search" placeholder="Search..." />
+          <ion-icon name="search-outline"></ion-icon>
+        </form>
+        <div class="cart-div">
+          <ion-icon name="cart-outline"></ion-icon>
+          <span class="cart-value">0</span>
+        </div>
+      </div>
+
+      <!-- Bottom Header  -->
+
+      <div class="bottom-header">
+        <div class="bottom-header-container">
+          <div class="hamburger-container">
+            <h4>menu</h4>
+            <div class="menu-icons">
+              <ion-icon name="menu-outline"></ion-icon>
+              <ion-icon name="close-outline"></ion-icon>
+            </div>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li class="for-sub-menu"><a href="#">Men</a>
+                <div class="sub-menu">
+                  <a href="">shirts</a>
+                  <a href="">watches</a>
+                  <a href="">jeans</a>
+                  <a href="">kompologia</a>
+                </div>
+              </li>
+              <li class="for-sub-menu"><a href="#">Women</a>
+                <div class="sub-menu">
+                  <a href="">shirts</a>
+                  <a href="">watches</a>
+                  <a href="">jeans</a>
+                  <a href="">kompologia</a>
+                </div>
+              </li>
+              <li><a href="#">Collection</a></li>
+              <li><a href="#">Niaou</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Swiper Slider-->
+
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide first-slide">
+          <div class="swipper-inner">
+            <h1 class="pame">Trying to find something new??</h1>
+            <p class="pamere">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore
+              impedit obcaecati qui autem. Officiis nulla minus culpa et
+              temporibus fuga similique, voluptas sequi ratione ea facilis
+              aspernatur dolore enim animi.
+            </p>
+            <a href="#" class="btn">Start Now</a>
+          </div>
+        </div>
+        <div class="swiper-slide second-slide">
+          <div class="swipper-inner">
+            <h1 class="pame">Trying to find something new??</h1>
+            <p class="pamere">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore
+              impedit obcaecati qui autem. Officiis nulla minus culpa et
+              temporibus fuga similique, voluptas sequi ratione ea facilis
+              aspernatur dolore enim animi.
+            </p>
+            <a href="#" class="btn">Start Now</a>
+          </div>
+        </div>
+        <div class="swiper-slide third-slide">
+          <div class="swipper-inner">
+            <h1 class="pame">Trying to find something new??</h1>
+            <p class="pamere">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore
+              impedit obcaecati qui autem. Officiis nulla minus culpa et
+              temporibus fuga similique, voluptas sequi ratione ea facilis
+              aspernatur dolore enim animi.
+            </p>
+            <a href="#" class="btn">Start Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

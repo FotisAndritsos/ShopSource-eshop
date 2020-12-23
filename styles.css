@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* COLORS  */
+/* color: #020100;
+color: #f1d302  yellow
+#c1292e red
+#fdfffc kind of white*/
+
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: "Raleway", sans-serif;
+  font-size: 10px;
+  width: 100%;
+  height: 100%;
+  color: #020100;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+/* HEADER  */
+
+header {
+  width: 100%;
+}
+
+/* TOP  */
+
+.top-header {
+  width: 100%;
+  background-color: #000;
+  padding: 1.3rem 0rem;
+}
+.top-container {
+  max-width: 1400px;
+  padding: 0 2.5rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-header-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: sans-serif;
+}
+.top-header-left ion-icon {
+  font-size: 14px;
+  margin-right: 0.5rem;
+}
+.top-header-left p {
+  font-size: 12px;
+  margin-right: 1rem;
+}
+.top-header-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social i {
+  font-size: 12px;
+}
+.social a {
+  margin-right: 1rem;
+  color: #fff;
+  transition: 0.3s all ease;
+}
+.social a:hover {
+  color: #f1d302;
+}
+.sign {
+  margin-left: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sign ion-icon {
+  font-size: 14px;
+  color: #fff;
+  margin-right: 0.5rem;
+}
+.sign a {
+  color: #fff;
+  font-size: 12px;
+  transition: 0.3s all ease;
+}
+.sign a:hover {
+  color: #f1d302;
+}
+/* MIDDLE  */
+
+.middle-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 9rem;
+  max-width: 1400px;
+  padding: 1rem 2.5rem;
+  margin:auto;
+}
+.logo a {
+  color: #f1d302;
+  font-size: 3rem;
+  font-weight: 800;
+}
+.middle-header form {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+form select {
+  width: 30%;
+  background-color: #f1d302;
+  color: #fdfffc;
+  padding: 1rem;
+  outline: none;
+  border: none;
+}
+form input {
+  width: 70%;
+  padding: 0.9rem 1.2rem;
+  outline: none;
+  border: 1px solid #dfdfdf;
+}
+form ion-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+.cart-div {
+  position: relative;
+  margin-right: 12px;
+}
+.cart-div ion-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+.cart-value {
+  position: absolute;
+  top: -12px;
+  right: -9px;
+  width: 15px;
+  height: 15px;
+  background-color: #f1d302;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.bottom-header {
+  width: 100%;
+  background-color: #c1292e;
+}
+.bottom-header-container {
+  max-width: 1400px;
+  padding: 0 2.5rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hamburger-container {
+  display: none;
+}
+nav {
+  width: 100%;
+  height: 5rem;
+  
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+nav ul li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+nav ul a {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  height: 100%;
+  padding: 15px 0;
+  transition: 0.3s all ease;
+}
+nav ul a:hover {
+  color: #f1d302;
+}
+.swiper-container {
+  width: 100%;
+  height: 600px;
+}
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 0 0 60px;
+  overflow: hidden;
+}
+
+.first-slide {
+  background: url(img/tamara-bellis-68csPWTnafo-unsplash.jpg) no-repeat center;
+  background-size: cover;
+}
+.second-slide {
+  background: url(img/hannah-morgan-ycVFts5Ma4s-unsplash.jpg) no-repeat center;
+  background-size: cover;
+}
+.third-slide {
+  background: url(img/ashim-d-silva-ZmgJiztRHXE-unsplash.jpg) no-repeat center;
+  background-size: cover;
+}
+.fourth-slide {
+  background: url(img/zeny-rosalina-Z3tc0Bfv0c4-unsplash.jpg) no-repeat center;
+  background-size: cover;
+}
+.swipper-inner{
+  background-color:rgba(0, 0, 0, 0.4) ;
+  max-width: 60%;
+  padding: 2rem;
+}
+.swiper-slide h1 {
+  color: #fff;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  font-weight: 900;
+}
+
+.swiper-slide p {
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  margin-bottom: 4rem;
+}
+.btn {
+  display: inline-block;
+  color: #fff;
+  background-color:#c1292e;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+}
+.swiper-pagination-bullet-active{
+  background-color: #fff;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after{
+  color: #fff;
+  outline: none;
+}
+
+.for-sub-menu {
+  position: relative;
+  
+}
+.sub-menu{
+  position: absolute;
+  bottom: -259px;
+  display: none;
+  left: 0;
+  padding:  2rem;
+  background-color:#c1292e ;
+  overflow: hidden;
+  border-top: 2px solid #dfdfdf;
+  text-align: center;
+  
+  transition: 0.5s all ease;
+  z-index: 2;
+}
+.sub-menu a{
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.for-sub-menu:hover .sub-menu{
+  display: block;
+}
