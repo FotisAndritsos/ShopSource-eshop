@@ -122,7 +122,7 @@ header {
   align-items: center;
   position: relative;
 }
-form select {
+.middle-header form select {
   width: 30%;
   background-color: #f1d302;
   color: #fdfffc;
@@ -130,13 +130,13 @@ form select {
   outline: none;
   border: none;
 }
-form input {
+.middle-header form input {
   width: 70%;
   padding: 0.9rem 1.2rem;
   outline: none;
   border: 1px solid #dfdfdf;
 }
-form i {
+.middle-header form i {
   position: absolute;
   top: 50%;
   right: 10px;
@@ -384,7 +384,7 @@ nav .dropbtn:hover {
   justify-content: center;
 }
 .img-container-2 .img-top {
-  margin-bottom:2.5rem;
+  margin-bottom: 2.5rem;
 }
 /* FAVORITE PRODUCTS  */
 
@@ -538,6 +538,135 @@ nav .dropbtn:hover {
   transform: scale(1.1);
 }
 
+footer {
+  width: 100%;
+  background-color: #c1292e;
+}
+.footer-container{
+   max-width: 1400px;
+  padding: 5rem 2.5rem 2rem;
+  margin: 5rem auto 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #c1292e;
+}
+.footer-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-bottom: 5rem;
+}
+.footer-list {
+  flex: 1;
+}
+.footer-list h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+}
+.footer-list ul li {
+  margin-bottom: 1.2rem;
+}
+.footer-list ul li a {
+  display: inline-block;
+  text-transform:uppercase;
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s all;
+}
+.footer-list ul li a:hover {
+  color: #f1d302;
+}
+.footer-list p {
+  width: 100%;
+  text-align: left;
+  line-height: 1.2;
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 2.5rem;
+}
+footer form {
+  width: 100%;
+}
+footer .input-icon {
+  width: 100%;
+  position: relative;
+}
+footer form .input-icon i {
+  position: absolute;
+  padding: 0.75rem 0.7rem;
+  font-size: 1.6rem;
+  display: inline;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f1d302;
+}
+
+footer form input {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 1.1rem 2rem 1.1rem 3rem;
+}
+footer form input::placeholder {
+  color: #84849d;
+  font-weight: 500;
+}
+footer .sub {
+  display: inline-block;
+  width: 100%;
+  background-color: #f1d302;
+  padding: 1rem;
+  margin-top: 0.8rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(237, 222, 221, 0.5);
+}
+.footer-bottom  .left-bottom,
+.footer-bottom  .right-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.footer-bottom  .left-bottom a,
+.footer-bottom  .right-bottom a {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.3s all;
+  margin: 0.3rem;
+}
+.footer-bottom  .left-bottom div {
+  margin-left: 0.3rem;
+}
+.footer-bottom  .left-bottom a:hover,
+.footer-bottom  .right-bottom a:hover {
+  color: #f1d302;
+}
+.footer-bottom .dot {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background-color: #fff;
+}
+.footer-bottom .right-bottom img{
+  margin: 0 0.5rem;
+}
+
 @media only screen and (max-width: 576px) {
   .top-container {
     flex-direction: column;
@@ -638,5 +767,42 @@ nav .dropbtn:hover {
   }
   .swiper-container.swiper2 {
     width: 100%;
+  }
+  .swiper2.swiper-button-next:after,
+  .swiper2.swiper-button-prev:after {
+    display: none;
+  }
+  .swiper2.swiper-button-next,
+  .swiper2 .swiper-button-prev {
+    display: none;
+  }
+   footer{
+    padding: 2rem;
+  }
+  .footer-top{
+    padding-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .footer-sub{
+    flex: 2;
+  }
+  .footer-list {
+  margin-bottom: 2rem;
+}
+}
+@media only screen and (max-width: 751px) {
+  .footer-top{
+    flex-direction: column;
+  }
+  .footer-list{
+    width: 100%;
+  }
+  .footer-bottom{
+    flex-direction: column;
+    padding-top:2rem;
+  }
+  footer form{
+    width: 80%;
   }
 }
