@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "sys": { "id": "1" },
+      "fields": {
+        "title": "Nike Show Blue",
+        "price": 10.99,
+        "image": { "fields": { "file": { "url": "./img/product-1.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "T-shirt Sync Jam",
+        "price": 12.99,
+        "image": { "fields": { "file": { "url": "./img/product-2.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "3" },
+      "fields": {
+        "title": "Shirt Kagouras",
+        "price": 12.99,
+        "image": { "fields": { "file": { "url": "./img/product-3.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "4" },
+      "fields": {
+        "title": "Shirt No Comment",
+        "price": 22.99,
+        "image": { "fields": { "file": { "url": "./img/product-4.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "5" },
+      "fields": {
+        "title": "Nike Air Red",
+        "price": 88.99,
+        "image": { "fields": { "file": { "url": "./img/product-5.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "6" },
+      "fields": {
+        "title": "T-shirt Kid",
+        "price": 32.99,
+        "image": { "fields": { "file": { "url": "./img/product-6.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "7" },
+      "fields": {
+        "title": "T-shirt Original",
+        "price": 45.99,
+        "image": { "fields": { "file": { "url": "./img/product-7.jpg" } } }
+      }
+    }
+  ]
+}
