@@ -253,7 +253,8 @@ header {
 .cart-counter{
   margin-right: 2rem;
 }
-.cart-counter > span{
+.cart-counter span,
+.cart-counter i{
   font-size: 1.8rem;
   margin-right: 0.3rem;
   color: #fff;
@@ -835,9 +836,9 @@ footer .sub {
     justify-content: space-between;
     align-items: center;
   }
-  .menu-icons ion-icon {
+  .menu-icons i {
     color: #fff;
-    font-size: 35px;
+    font-size: 20px;
     cursor: pointer;
   }
   .menu.active {

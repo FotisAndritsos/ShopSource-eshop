@@ -112,37 +112,78 @@ class UI {
                 </div>
                 <div class="right-side-cart">
                   <div class="cart-counter">
-                    <span><i class="fas fa-chevron-left decrease" data-id=${item.id}></i></span>
+                    <i class="fas fa-chevron-left decrease" data-id=${item.id}></i>
                     <span class="cart-item-amount">${item.amount}</span>
-                    <span><i class="fas fa-chevron-right increase" data-id=${item.id}></i></span>
+                    <i class="fas fa-chevron-right increase" data-id=${item.id}></i>
                   </div>
                   <i class="fa fa-times close-cart-item" data-id=${item.id}></i>
                 </div>`;
-                cartContainer.appendChild(div);
-                
+    cartContainer.appendChild(div);
   }
-  setupAPP(){
+  setupAPP() {
     cart = Storage.getCart();
     this.setCartValues(cart);
     this.populateCart(cart);
   }
-  populateCart(cart){
-    cart.forEach(item =>this.addCartItem(item));
+  populateCart(cart) {
+    cart.forEach((item) => this.addCartItem(item));
   }
-  cartLogic(){
+  cartLogic() {
     //clear cart button
-    clearCartBtn.addEventListener('click',()=>{
-this.clearCart()
-    })
+    clearCartBtn.addEventListener("click", () => {
+      this.clearCart();
+    });
     //cart functionality
-}
-  clearCart(){
-    let cartItems = cart.map(item => item.id);
-    cartItems.forEach(id => this.removeItem(id))
+    cartContainer.addEventListener("click", (event) => {
+      if (event.target.classList.contains("close-cart-item")) {
+        let removeItem = event.target;
+        let id = removeItem.dataset.id;
+        cartContainer.removeChild(removeItem.parentElement.parentElement);
+        this.removeItem(id);
+      } else if (event.target.classList.contains("increase")) {
+        let addAmount = event.target;
+        let id = addAmount.dataset.id;
+        let tempItem = cart.find((item) => item.id === id);
+        tempItem.amount = tempItem.amount + 1;
+        Storage.saveCart(cart);
+        this.setCartValues(cart);
+        addAmount.previousElementSibling.innerHTML = tempItem.amount;
+      } else if (event.target.classList.contains("decrease")) {
+        let lowerAmount = event.target;
+        let id = lowerAmount.dataset.id;
+        let tempItem = cart.find((item) => item.id === id);
+        tempItem.amount = tempItem.amount - 1;
+        if (tempItem.amount > 0) {
+          Storage.saveCart(cart);
+          this.setCartValues(cart);
+          lowerAmount.nextElementSibling.innerHTML = tempItem.amount;
+        } else {
+          cartContainer.removeChild(
+            lowerAmount.parentElement.parentElement.parentElement
+          );
+          this.removeItem(id);
+        }
+      }
+    });
   }
-  removeItem(id){
-    cart = cart.filter(item =>item.id !==id);
+  clearCart() {
+    let cartItems = cart.map((item) => item.id);
+    cartItems.forEach((id) => this.removeItem(id));
+    while (cartContainer.children.length > 0) {
+      cartContainer.removeChild(cartContainer.children[0]);
+    }
   }
+  removeItem(id) {
+    cart = cart.filter((item) => item.id !== id);
+    this.setCartValues(cart);
+    Storage.saveCart(cart);
+    // let button = this.getSingeButton(id);
+    // button.disabled = false;
+  }
+  // getSingeButton(id){
+  //   return buttonsDOM.find(button => button.dataset.id
+  //     === id);
+  // }
 }
 //local storage
 class Storage {
@@ -156,9 +197,10 @@ class Storage {
   static saveCart(cart) {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
-  static getCart(){
-    return localStorage.getItem('cart')?
-    JSON.parse(localStorage.getItem('cart')):[];
+  static getCart() {
+    return localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
   }
 }
 
@@ -169,7 +211,8 @@ document.addEventListener("DOMContentLoaded", () => {
   ui.setupAPP();
 
   //get all products
-  products.getProducts()
+  products
+    .getProducts()
     .then((products) => {
       ui.displayProducts(products);
       Storage.saveProducts(products);
@@ -219,34 +262,6 @@ closeBtn.addEventListener("click", () => {
   menuBtn.classList.remove("active");
   closeBtn.classList.remove("active");
 });
-
-// var mySwiper2 = new Swiper(".swiper-container.swiper2", {
-//   slidesPerView: 1,
-//   spaceBetween: 30,
-//   loop: true,
-//   pagination: {
-//     el: ".swiper2.swiper-pagination",
-//     clickable: true,
-//   },
-//   navigation: {
-//     nextEl: ".swiper-button-next.swiper2",
-//     prevEl: " .swiper-button-prev.swiper2",
-//     disabledClass: ".swiper2 .swiper-button-disabled",
-//   },
-//   autoplay: {
-//     delay: 5000,
-//   },
-//   breakpoints: {
-//     400: {
-//       slidesPerView: 2,
-//       spaceBetween: 20,
-//     },
-//     868: {
-//       slidesPerView: 3,
-//       spaceBetween: 40,
-//     },
-//   },
-// });
 
 var mySwiper = new Swiper(".swiper-container.swiper1", {
   slidesPerView: 1,
