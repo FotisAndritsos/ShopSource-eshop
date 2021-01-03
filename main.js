@@ -70,23 +70,47 @@ class UI {
     buttonsDOM = buttons;
     buttons.forEach((button) => {
       let id = button.dataset.id;
-      // let inCart = cart.find(item=>item.id === id);
 
       button.addEventListener("click", (event) => {
         //get product from products
         let cartItem = { ...Storage.getProduct(id), amount: 1 };
+
         //add product to  the cart
+
+        cart.forEach((item) => {
+          if (item.id === cartItem.id) {
+            item.amount -= 1;
+            cartItem.amount += 1;
+          }
+        });
         cart = [...cart, cartItem];
+
+        console.log(cart);
+        // console.log(cartItem)
+
         //save cart in local storage
         Storage.saveCart(cart);
         //set cart values
         this.setCartValues(cart);
         //display cart item
+
         this.addCartItem(cartItem);
-        //show the cart
+        const yo = [...document.querySelectorAll(".cart-item-amount")];
+        yo.forEach((item) => {
+          let omg = item.nextElementSibling;
+          // console.log(omg.dataset.id);
+          let ggg = item.innerHTML;
+          let lol = omg.dataset.id;
+          if (lol === cartItem.id && ggg < cartItem.amount) {
+            cartContainer.removeChild(
+              omg.parentElement.parentElement.parentElement
+            );
+          }
+        });
       });
     });
   }
+
   setCartValues(cart) {
     let tempTotal = 0;
     let itemsTotal = 0;
@@ -97,6 +121,7 @@ class UI {
     cartTotal.innerHTML = parseFloat(tempTotal.toFixed(2));
     cartValue.innerHTML = itemsTotal;
   }
+
   addCartItem(item) {
     const div = document.createElement("div");
     div.classList.add("cart-item");
@@ -120,6 +145,7 @@ class UI {
                 </div>`;
     cartContainer.appendChild(div);
   }
+
   setupAPP() {
     cart = Storage.getCart();
     this.setCartValues(cart);

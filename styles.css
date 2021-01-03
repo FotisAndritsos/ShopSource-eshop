@@ -215,7 +215,6 @@ header {
 }
 .cart-info {
   margin-left: 2rem;
-  text-align: center;
   padding: 1rem;
 }
 .cart-img-cont {
@@ -289,7 +288,8 @@ header {
   margin: 2rem auto 0;
   padding: 1rem 2rem;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
   color: #fff;
   border: 1px solid #fff;
   transition: 0.3s all ease;
