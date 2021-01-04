@@ -119,15 +119,15 @@ class UI {
         //get product from products
         let viewItemPro = { ...Storage.getProduct(id) };
         this.viewItemF(viewItemPro);
-
-        viewItem.addEventListener("click", (event) => {
+      });
+    });
+    viewItem.addEventListener("click", (event) => {
       if (event.target.classList.contains("close-view-item")) {
-        viewItem.classList.remove('active')
+        viewItem.classList.remove("active");
         let removeItem = event.target;
+        console.log(removeItem);
         viewItem.removeChild(removeItem.parentElement);
       }
-        });
-      });
     });
   }
   addCartItem(item) {
@@ -154,7 +154,7 @@ class UI {
     cartContainer.appendChild(div);
   }
   viewItemF(item) {
-    viewItem.classList.add('active')
+    viewItem.classList.add("active");
     const div = document.createElement("div");
     div.classList.add("view-item-inside");
     div.innerHTML = `
