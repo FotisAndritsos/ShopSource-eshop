@@ -12,6 +12,7 @@ const cartValue = document.querySelector(".cart-value");
 const cartTotal = document.querySelector(".total-amount");
 const cartContainer = document.querySelector(".cart-container");
 const clearCartBtn = document.querySelector(".clear-cart");
+const viewItem = document.querySelector(".view-item");
 
 cartIcon.addEventListener("click", () => {
   cartShow.classList.add("active");
@@ -19,6 +20,7 @@ cartIcon.addEventListener("click", () => {
 closeCart.addEventListener("click", () => {
   cartShow.classList.remove("active");
 });
+
 //cart
 let cart = [];
 let buttonsDOM = [];
@@ -57,7 +59,7 @@ class UI {
               <p>$${product.price}</p>
             </div>
             <div class="hidden-option">
-              <i class="fas fa-eye"></i>
+              <i class="fas fa-eye view-btn" data-id=${product.id}></i>
               <i class="fas fa-shopping-cart bag-btn" data-id=${product.id}></i>
             </div>
           </div>
@@ -77,7 +79,7 @@ class UI {
 
         //add product to  the cart
 
-        cart.forEach((item,index) => {
+        cart.forEach((item, index) => {
           if (item.id === cartItem.id) {
             cartItem.amount = item.amount + 1;
             cart.splice(index, 1);
@@ -96,31 +98,38 @@ class UI {
         this.addCartItem(cartItem);
         const yo = [...document.querySelectorAll(".cart-item-amount")];
         yo.forEach((item) => {
-          let omg = item.nextElementSibling;
-          let ggg = item.innerHTML;
-          let lol = omg.dataset.id;
-          if (lol === cartItem.id && ggg < cartItem.amount) {
+          let goDownOne = item.nextElementSibling;
+          let cartCurrentAmm = item.innerHTML;
+          let goDownOneID = goDownOne.dataset.id;
+          if (goDownOneID === cartItem.id && cartCurrentAmm < cartItem.amount) {
             cartContainer.removeChild(
-              omg.parentElement.parentElement.parentElement
+              goDownOne.parentElement.parentElement.parentElement
             );
           }
         });
-                console.log(cart);
       });
     });
   }
+  getinfoButtons() {
+    const viewButtons = document.querySelectorAll(".view-btn");
+    viewButtons.forEach((button) => {
+      let id = button.dataset.id;
 
-  setCartValues(cart) {
-    let tempTotal = 0;
-    let itemsTotal = 0;
-    cart.map((item) => {
-      tempTotal += item.price * item.amount;
-      itemsTotal += item.amount;
+      button.addEventListener("click", (event) => {
+        //get product from products
+        let viewItemPro = { ...Storage.getProduct(id) };
+        this.viewItemF(viewItemPro);
+
+        viewItem.addEventListener("click", (event) => {
+      if (event.target.classList.contains("close-view-item")) {
+        viewItem.classList.remove('active')
+        let removeItem = event.target;
+        viewItem.removeChild(removeItem.parentElement);
+      }
+        });
+      });
     });
-    cartTotal.innerHTML = parseFloat(tempTotal.toFixed(2));
-    cartValue.innerHTML = itemsTotal;
   }
-
   addCartItem(item) {
     const div = document.createElement("div");
     div.classList.add("cart-item");
@@ -144,15 +153,43 @@ class UI {
                 </div>`;
     cartContainer.appendChild(div);
   }
+  viewItemF(item) {
+    viewItem.classList.add('active')
+    const div = document.createElement("div");
+    div.classList.add("view-item-inside");
+    div.innerHTML = `
+                  <div class="view-item-img">
+               <img src=${item.image} alt="" />
+                  </div>
+                  <div class="view-item-info">
+                    <h1>${item.title} </h1>
+                    <h2>$${item.price}</h2>
+                  </div>
+                  <i class="fa fa-times close-view-item"></i>
+                
+  `;
+    viewItem.appendChild(div);
+  }
+
+  setCartValues(cart) {
+    let tempTotal = 0;
+    let itemsTotal = 0;
+    cart.map((item) => {
+      tempTotal += item.price * item.amount;
+      itemsTotal += item.amount;
+    });
+    cartTotal.innerHTML = parseFloat(tempTotal.toFixed(2));
+    cartValue.innerHTML = itemsTotal;
+  }
 
   setupAPP() {
     cart = Storage.getCart();
     this.setCartValues(cart);
-    // this.populateCart(cart);
+    this.populateCart(cart);
   }
-  // populateCart(cart) {
-  //   cart.forEach((item) => this.addCartItem(item));
-  // }
+  populateCart(cart) {
+    cart.forEach((item) => this.addCartItem(item));
+  }
   cartLogic() {
     //clear cart button
     clearCartBtn.addEventListener("click", () => {
@@ -244,6 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(() => {
       ui.getBagButtons();
+      ui.getinfoButtons();
       ui.cartLogic();
     })
     .then(() => {

@@ -18,6 +18,7 @@ body {
   width: 100%;
   height: 100%;
   color: #333230;
+  position: relative;
 }
 a {
   text-decoration: none;
@@ -646,7 +647,7 @@ nav .dropbtn:hover {
   position: absolute;
   top: 4%;
   right: 0;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem 2rem;
   background-color: #c1292e;
   transform: translateX(100%);
   transition: 0.3s transform ease;
@@ -654,15 +655,15 @@ nav .dropbtn:hover {
 }
 .swiper2 .hidden-option i {
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 .swiper2 .hidden-option i:first-child {
-  margin-right: 1rem;
+  margin-right: 1.3rem;
 }
 .swiper2 .swiper-slide:hover .hidden-option {
   transform: translateX(0);
 }
-.swiper2.hidden-option i:hover {
+.swiper2 .hidden-option i:hover {
   color: #f1d302;
 }
 .swiper2 .swiper-slide:hover img {
@@ -938,4 +939,57 @@ footer .sub {
   footer form {
     width: 80%;
   }
+}
+.view-item{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 1);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s all ease;
+  z-index: 4000;
+}.view-item.active{
+  display: flex;
+}
+.view-item-inside{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+  
+}
+.view-item-img{
+  width: 300px;
+  height: 300px;
+}
+.view-item-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.view-item-info{
+  padding: 2rem;
+  text-align: center;
+}
+.view-item-info h1{
+  margin-bottom: 1rem;
+  color: #fff;
+  font-size: 2.5rem;
+}
+.view-item-info h2{
+  color: #fff;
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+.close-view-item{
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
 }
