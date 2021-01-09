@@ -171,7 +171,7 @@ header {
 
 .cart-show {
   z-index: 1001;
-  width: 40vw;
+  width: 500px;
   padding: 3rem;
   position: absolute;
   background-color: #c1292e;
@@ -1019,6 +1019,17 @@ footer .sub {
     text-align: left;
     width: 100%;
   }
+  .cart-show {
+  width: 100vw;
+  padding: 3rem;
+  position: absolute;
+  background-color: #c1292e;
+  top: 150%;
+  right: -780%;
+  display: none;
+  -webkit-box-shadow: 0px 0px 10px -1px #000000;
+  box-shadow: 0px 0px 10px -1px #000000;
+}
   .swipper-inner {
     max-width: 100%;
   }
