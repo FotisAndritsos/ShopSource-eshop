@@ -7,13 +7,13 @@ const cartShow = document.querySelector(".cart-show");
 const closeCart = document.querySelector(".close-cart");
 const cartIcon = document.querySelector(".cart-icon");
 //spec
-const productsDOM = document.querySelector(".swiper-wrapper.swiper2");
 const productsAll = document.querySelector(".all-products");
 const cartValue = document.querySelector(".cart-value");
 const cartTotal = document.querySelector(".total-amount");
 const cartContainer = document.querySelector(".cart-container");
 const clearCartBtn = document.querySelector(".clear-cart");
 const viewItem = document.querySelector(".view-item");
+
 cartIcon.addEventListener("click", () => {
   cartShow.classList.add("active");
 });
@@ -47,24 +47,9 @@ class Products {
 //display products
 class UI {
   displayProducts(products) {
-    let result = "";
     let yo = "";
     products.forEach((product) => {
-      result += `
-      <div class="swiper-slide swiper2">
-            <div class="img-area">
-              <img src=${product.image} alt="" />
-            </div>
-            <div class="body-area">
-              <h3>${product.title}</h3>
-              <p>$${product.price}</p>
-            </div>
-            <div class="hidden-option">
-              <i class="fas fa-eye view-btn" data-id=${product.id}></i>
-              <i class="fas fa-shopping-cart bag-btn" data-id=${product.id}></i>
-            </div>
-          </div>
-      `;
+     
         yo += `
      <div class="all-products-item">
             <div class="all-products-img-area">
@@ -81,34 +66,9 @@ class UI {
           </div>
       `;
     });
-    productsDOM.innerHTML = result;
-    // productsAll.innerHTML = yo;
-    console.log(document);
+    productsAll.innerHTML = yo;
   }
-//   displayAllProducts(products) {
-    
-// const productsAll = document.querySelector(".all-products");
-//     console.log(productsAll);
-//     let result = "";
-//     products.forEach((product) => {
-//       result += `
-//        <div class="all-products-item">
-//             <div class="all-products-img-area">
-//               <img src=${product.image} alt="" />
-//             </div>
-//             <div class="all-products-body-area">
-//               <h3>${product.title}</h3>
-//               <p>$${product.price}</p>
-//             </div>
-//             <div class="all-products-hidden-option">
-//               <i class="fas fa-eye view-btn" data-id=${product.id}></i>
-//               <i class="fas fa-shopping-cart bag-btn" data-id=${product.id}></i>
-//             </div>
-//           </div>
-//       `;
-//     });
-//     productsAll.innerHTML = result;
-//   }
+
   
   getBagButtons() {
     
@@ -328,35 +288,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ui.getBagButtons();
       ui.getinfoButtons();
       ui.cartLogic();
-    })
-    .then(() => {
-      var mySwiper2 = new Swiper(".swiper-container.swiper2", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-          el: ".swiper2.swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next.swiper2",
-          prevEl: " .swiper-button-prev.swiper2",
-          disabledClass: ".swiper2 .swiper-button-disabled",
-        },
-        autoplay: {
-          delay: 5000,
-        },
-        breakpoints: {
-          400: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          868: {
-            slidesPerView: 3,
-            spaceBetween: 40,
-          },
-        },
-      });
     });
 });
 
@@ -371,39 +302,3 @@ closeBtn.addEventListener("click", () => {
   closeBtn.classList.remove("active");
 });
 
-var mySwiper = new Swiper(".swiper-container.swiper1", {
-  slidesPerView: 1,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-    disabledClass: ".swiper-button-disabled",
-  },
-  autoplay: {
-    delay: 5000,
-  },
-  on: {
-    init: function () {
-      gsap.fromTo(
-        ".pame",
-        { opacity: 0, y: -100 },
-        { opacity: 1, y: 0, duration: 1 }
-      );
-      gsap.fromTo(".pamere", { x: -100 }, { x: 0, duration: 1.5 });
-      gsap.fromTo(".btn", { y: 100 }, { y: 0, duration: 2 });
-    },
-  },
-});
-mySwiper.on("slideChange", function () {
-  gsap.fromTo(
-    ".pame",
-    { opacity: 0, y: -100 },
-    { opacity: 1, y: 0, duration: 1 }
-  );
-  gsap.fromTo(".pamere", { x: -100 }, { x: 0, duration: 1.5 });
-  gsap.fromTo(".btn", { y: 100 }, { y: 0, duration: 2 });
-});

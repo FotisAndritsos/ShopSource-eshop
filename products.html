@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ShopSource-eshop</title>
+
+    <!--Font awesome CDN-->
+    <script
+      src="https://kit.fontawesome.com/996b325733.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header  -->
+    <header>
+      <!-- Top Header  -->
+
+      <div class="top-header">
+        <div class="top-container">
+          <div class="top-header-left">
+            <i class="fas fa-mobile-alt"></i>
+            <p class="phone">2410 543567</p>
+            <i class="far fa-envelope"></i>
+            <p>sale@yoursite.com</p>
+          </div>
+          <div class="top-header-right">
+            <div class="social">
+              <a href=""><i class="fab fa-facebook-f"></i></a>
+              <a href=""><i class="fab fa-twitter"></i></a>
+              <a href=""><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="sign">
+              <i class="far fa-user"></i>
+              <a href="">Sign in / Sign up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Middle Header  -->
+      <div class="middle-header">
+        <h1 class="logo"><a href="index.html">ShopSource.</a></h1>
+        <form action="/action_page.php">
+          <select name="categories" id="categories">
+            <option value="all-categories">All Categories</option>
+            <option value="home">Home</option>
+            <option value="fashion">Fashion</option>
+            <option value="women">Women</option>
+            <option value="men">Men</option>
+            <option value="new-arrivals">New Arrivals</option>
+          </select>
+          <input type="text" id="search" placeholder="Search..." />
+          <i class="fas fa-search"></i>
+        </form>
+        <div class="cart-div">
+          <i class="fas fa-shopping-cart cart-icon"></i>
+          <span class="cart-value">0</span>
+          <div class="cart-show">
+            <i class="fa fa-times close-cart"></i>
+            <h3>Your Cart</h3>
+            <div class="cart-container"></div>
+            <div class="cart-footer">
+              <h4 class="total-amount-h">
+                Total Amount: $ <span class="total-amount"> 0</span>
+              </h4>
+              <a href="#" class="clear-cart">Clear Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Header  -->
+
+      <div class="bottom-header">
+        <div class="bottom-header-container">
+          <div class="hamburger-container">
+            <div class="menu-icons">
+              <i class="fa fa-bars menu"></i>
+              <i class="fa fa-times close"></i>
+            </div>
+            <h4>menu</h4>
+          </div>
+          <nav class="nav">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropbtn">Men</a>
+                <div class="dropdown-content">
+                  <a href="#">Jeans</a>
+                  <a href="#">Shirts</a>
+                  <a href="#">Polo</a>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropbtn">Women</a>
+                <div class="dropdown-content">
+                  <a href="#">Shirts</a>
+                  <a href="#">Dresses</a>
+                  <a href="#">Tops</a>
+                  <a href="#">Backpacks</a>
+                  <a href="#">Accessories</a>
+                </div>
+              </li>
+              <li><a href="#">Collection</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+   
+    
+      <section class="all-products">
+        <!-- <div class="all-products-item">
+            <div class="all-products-img-area">
+              <img src=${product.image} alt="" />
+            </div>
+            <div class="all-products-body-area">
+              <h3>${product.title}</h3>
+              <p>$${product.price}</p>
+            </div>
+            <div class="all-products-hidden-option">
+              <i class="fas fa-eye view-btn" data-id=${product.id}></i>
+              <i class="fas fa-shopping-cart bag-btn" data-id=${product.id}></i>
+            </div>
+          </div> -->
+      </section>
+   
+    <footer>
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-list">
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="#">Men</a></li>
+              <li><a href="#">Women</a></li>
+              <li><a href="#">Collection</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-list">
+            <h3>Marketplace</h3>
+            <ul>
+              <li><a href="#">Trending</a></li>
+              <li><a href="#">Best selling</a></li>
+              <li><a href="#">Latest</a></li>
+              <li><a href="#">Our Blog</a></li>
+              <li><a href="#">Favorites</a></li>
+            </ul>
+          </div>
+          <div class="footer-list">
+            <h3>General</h3>
+            <ul>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Carreer</a></li>
+              <li><a href="#">Trending</a></li>
+              <li><a href="#">News</a></li>
+            </ul>
+          </div>
+          <div class="footer-list footer-sub">
+            <h3>Newsletter</h3>
+            <p>
+              Lorem ipsum dolor sit ametunde. Aliquid necessitatibus! m ipsum
+              dolor sit ametunde m ipsum dolor sit ametunde.
+            </p>
+            <form id="form">
+              <div class="input-icon">
+                <i class="fas fa-envelope"></i>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter yout email adress"
+                />
+              </div>
+              <a href="#" class="sub">Subscribe</a>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="left-bottom">
+            <a href="#">Privacy Policy</a>
+            <span class="dot"></span>
+            <a href="#">Terms and Conditons</a>
+            <span class="dot"></span>
+            <div>
+              Icons made by
+              <a
+                href="https://www.flaticon.com/authors/roundicons"
+                title="Roundicons"
+                >Roundicons</a
+              >
+              from
+              <a href="https://www.flaticon.com/" title="Flaticon"
+                >www.flaticon.com</a
+              >
+            </div>
+          </div>
+          <div class="right-bottom">
+            <img
+              src="img/paypal.png"
+              style="
+                width: 35px;
+                background-color: #fff;
+                height: 28px;
+                padding: 0 0.2rem;
+                border-radius: 3px;
+              "
+              alt=""
+            />
+            <img src="img/mastercard.png"
+              style="
+                width: 35px;
+                background-color: #fff;
+                height: 28px;
+                padding: 0 0.2rem;
+                border-radius: 3px;
+              "
+              alt=""
+            />
+            <img
+              src="img/visa.png"
+              style="
+                width: 35px;
+                background-color: #fff;
+                height: 28px;
+                padding: 0 0.2rem;
+                border-radius: 3px;
+              "
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="view-item"></div>
+    <script src="main-second.js" ></script>
+  </body>
+</html>
