@@ -341,8 +341,17 @@ nav ul a {
   padding: 15px 0;
   transition: 0.3s all ease;
 }
+nav ul a i{
+  margin-left: 0.3rem;
+  transition: all 0.3s;
+} 
 nav ul a:hover,
 nav .dropbtn:hover {
+  color: #f1d302;
+}
+
+nav .dropbtn:hover i{
+  transform: rotate(180deg);
   color: #f1d302;
 }
 .dropdown {

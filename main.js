@@ -23,7 +23,9 @@ closeCart.addEventListener("click", () => {
 
 //cart
 let cart = [];
+
 let buttonsDOM = [];
+
 //getting the products
 class Products {
   async getProducts() {
@@ -33,7 +35,7 @@ class Products {
 
       let products = data.items;
       products = products.map((item) => {
-        const { title, price } = item.fields;
+        const { title, price } = item.fields; //destructoring..
         const { id } = item.sys;
         const image = item.fields.image.fields.file.url;
         return { title, price, id, image };
@@ -82,33 +84,8 @@ class UI {
       `;
     });
     productsDOM.innerHTML = result;
-    // productsAll.innerHTML = yo;
-    console.log(document);
   }
-//   displayAllProducts(products) {
-    
-// const productsAll = document.querySelector(".all-products");
-//     console.log(productsAll);
-//     let result = "";
-//     products.forEach((product) => {
-//       result += `
-//        <div class="all-products-item">
-//             <div class="all-products-img-area">
-//               <img src=${product.image} alt="" />
-//             </div>
-//             <div class="all-products-body-area">
-//               <h3>${product.title}</h3>
-//               <p>$${product.price}</p>
-//             </div>
-//             <div class="all-products-hidden-option">
-//               <i class="fas fa-eye view-btn" data-id=${product.id}></i>
-//               <i class="fas fa-shopping-cart bag-btn" data-id=${product.id}></i>
-//             </div>
-//           </div>
-//       `;
-//     });
-//     productsAll.innerHTML = result;
-//   }
+
   
   getBagButtons() {
     
@@ -282,13 +259,7 @@ class UI {
     cart = cart.filter((item) => item.id !== id);
     this.setCartValues(cart);
     Storage.saveCart(cart);
-    // let button = this.getSingeButton(id);
-    // button.disabled = false;
   }
-  // getSingeButton(id){
-  //   return buttonsDOM.find(button => button.dataset.id
-  //     === id);
-  // }
 }
 //local storage
 class Storage {
@@ -310,8 +281,9 @@ class Storage {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const ui = new UI();
+  const ui = new UI(); //instances
   const products = new Products();
+
   //set up application
   ui.setupAPP();
 
@@ -320,7 +292,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .getProducts()
     .then((products) => {
       ui.displayProducts(products);
-      // ui.displayAllProducts(products);
       Storage.saveProducts(products);
       
     })

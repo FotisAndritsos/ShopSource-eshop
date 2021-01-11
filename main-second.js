@@ -242,13 +242,7 @@ class UI {
     cart = cart.filter((item) => item.id !== id);
     this.setCartValues(cart);
     Storage.saveCart(cart);
-    // let button = this.getSingeButton(id);
-    // button.disabled = false;
   }
-  // getSingeButton(id){
-  //   return buttonsDOM.find(button => button.dataset.id
-  //     === id);
-  // }
 }
 //local storage
 class Storage {
@@ -280,7 +274,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .getProducts()
     .then((products) => {
       ui.displayProducts(products);
-      // ui.displayAllProducts(products);
       Storage.saveProducts(products);
       
     })
